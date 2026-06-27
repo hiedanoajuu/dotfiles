@@ -4,7 +4,13 @@ REPO="$(pwd)"
 FILES=(
     "$HOME/.zshrc"
     "$HOME/.zshenv"
-    "$HOME/.config/alacritty"
+    "$HOME/.config/alacritty/alacritty.toml"
+    "$HOME/.config/nvim/init.lua"
+    "$HOME/.gitconfig"
+    "$HOME/.config/hypr/hypridle.conf"
+    "$HOME/.config/hypr/hyprland.conf"
+    "$HOME/.config/hypr/hyprlock.conf"
+    "$HOME/.config/hypr/hyprpaper.conf"
 )
 
 backup() {
