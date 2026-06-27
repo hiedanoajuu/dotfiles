@@ -2,13 +2,12 @@
 
 REPO="$(pwd)"
 FILES=(
-    "$HOME/.bashrc"
     "$HOME/.zshrc"
 )
 
 for i in "${FILES[@]}"; do
     if [ -e "$i" ]; then
-        cp -r "$i" "$REPO/."
+        cp -rf "$i" "$REPO/."
     else
         echo "Not found: $item"
     fi
