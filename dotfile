@@ -7,15 +7,29 @@ FILES=(
     "$HOME/.config/alacritty"
 )
 
-for i in "${FILES[@]}"; do
-    if [ -e "$i" ]; then
-        mkdir -p "$(dirname "${i#$HOME/}")"
-        cp -rf "$i" "$REPO/."
-    else
-        echo "Not found: $item"
-    fi
-done
+backup() {
+    for i in "${FILES[@]}"; do
+        if [ -e "$i" ]; then
+            mkdir -p "$REPO/$(dirname "${i#$HOME/}")"
+            cp -rf "$i" "$REPO/$(dirname "${i#$HOME/}")/."
+        else
+            echo "Not found: $item"
+        fi
+    done
 
-git add .
-git commit -m "$(date '+%Y%m%d%H%M%S')"
-git push
+    git add .
+    git commit -m "$(date '+%Y%m%d%H%M%S')"
+    git push
+}
+
+restore() {
+    cp -rf $REPO/* ~
+}
+
+while getopts "vbr" opt; do
+    case $opt in
+        v) echo "Ajuu Hieda (hieda@ajuu.org)";;
+        b) backup;;
+        r) restore;;
+    esac
+done
