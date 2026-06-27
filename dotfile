@@ -7,7 +7,7 @@ FILES=(
 )
 
 for i in "${FILES[@]}"; do
-    if [ -e "item" ]; then
+    if [ -e "$i" ]; then
         cp -r "$i" "$REPO/."
     else
         echo "Not found: $item"
