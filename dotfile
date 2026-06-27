@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+REPO="$(pwd)"
+FILES=(
+    "$HOME/.bashrc"
+    "$HOME/.zshrc"
+)
+
+for i in "${FILES[@]}"; do
+    if [ -e "item" ]; then
+        cp -r "$i" "$REPO/."
+    else
+        echo "Not found: $item"
+    fi
+done
+
+git add .
+git commit -m "$(date '+%Y%m%d%H%M%S')"
+git push
