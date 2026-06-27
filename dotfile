@@ -3,10 +3,13 @@
 REPO="$(pwd)"
 FILES=(
     "$HOME/.zshrc"
+    "$HOME/.zshenv"
+    "$HOME/.config/alacritty"
 )
 
 for i in "${FILES[@]}"; do
     if [ -e "$i" ]; then
+        mkdir -p "$(dirname "${i#$HOME/}")"
         cp -rf "$i" "$REPO/."
     else
         echo "Not found: $item"
