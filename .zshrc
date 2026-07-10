@@ -55,14 +55,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' completer _expand _complete _correct
 
-# key
-# bindkey '^R' history-incremental-search-backward
-# bindkey '^S' history-incremental-search-forward
-# bindkey '^A' beginning-of-line
-# bindkey '^E' end-of-line
-# bindkey '^U' backward-kill-line
-# bindkey '^K' kill-line
-
 setopt correct
 setopt auto_pushd
 setopt pushd_ignore_dups

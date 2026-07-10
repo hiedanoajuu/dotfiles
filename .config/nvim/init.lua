@@ -64,18 +64,18 @@ vim.cmd('syntax on')
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
--- 搜索设置
+-- Search
 vim.opt.incsearch = true
 vim.keymap.set('n', '<esc><esc>', ':nohlsearch<CR>', { silent = true })
 
--- 缓冲区和文件设置
+-- Buffer
 vim.opt.hidden = true
 vim.cmd('filetype on')
 vim.cmd('filetype plugin on')
 vim.cmd('filetype indent on')
 vim.opt.backspace = 'indent,eol,start'
 
--- 显示设置
+-- Display
 vim.opt.number = true
 vim.opt.ruler = true
 vim.opt.encoding = 'utf-8'
