@@ -11,6 +11,7 @@ FILES=(
     "$HOME/.config/hypr/hyprland.conf"
     "$HOME/.config/hypr/hyprlock.conf"
     "$HOME/.config/hypr/hyprpaper.conf"
+    "$HOME/.config/tmux/tmux.conf"
 )
 
 backup() {

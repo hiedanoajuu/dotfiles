@@ -11,3 +11,5 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export TEXMFHOME="$HOME/.local/share/texmf"
 export PATH=$HOME/.local/bin:$PATH
+
+export KEYTIMEOUT=1

@@ -3,9 +3,9 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1500
 
-
 setopt autocd extendedglob notify
-bindkey -e
+bindkey -v
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/hiedanoajuu/.zshrc'
@@ -40,7 +40,7 @@ lfcd() {
 alias lf='lfcd'
 alias vi='nvim'
 
-# history
+# History
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
@@ -49,7 +49,7 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt share_history
 
-# completion
+# Completion
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' rehash true
@@ -64,14 +64,37 @@ hash -d pro=~/Projects
 hash -d doc=~/Documents
 hash -d down=~/Downloads
 
-# security
+# Security
 setopt no_clobber
+
+# Cursor toggle
+function zle-keymap-select {
+  case $KEYMAP in
+    vicmd)
+      echo -ne '\e[2 q'  # block
+      ;;
+    *)
+      echo -ne '\e[6 q'  # beam
+      ;;
+  esac
+}
+
+function zle-line-init {
+  echo -ne '\e[6 q'
+}
+
+preexec() {
+  echo -ne '\e[2 q'
+}
+
+zle -N zle-keymap-select
+zle -N zle-line-init
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+    command git clone git@github.com:zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
@@ -86,7 +109,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-as-monitor \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
+    zdharma-continuum/zinit-annex-rust \
 
 ### End of Zinit's installer chunk
 zinit light zsh-users/zsh-autosuggestions
