@@ -1,0 +1,226 @@
+* {
+    border: none;
+    min-height: 0;
+    font-family: "Source Sans 3", "Symbols Nerd Font";
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: rgba(36, 40, 59, 0.88);
+    color: #c5c8c6;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 14px;
+}
+
+#workspaces,
+#clock,
+#cpu,
+#memory,
+#disk,
+#wireplumber,
+#network,
+#bluetooth,
+#battery,
+#tray,
+#custom-launcher {
+    color: #c5c8c6;
+    background-color: rgba(36,40,59,0.85);
+
+    padding: 0 12px;
+    margin: 4px 4px;
+    border-radius: 8px;
+}
+
+#workspaces button {
+    color: #565f89;
+    background-color: transparent;
+
+    margin: 0 2px;
+    padding: 0 8px;
+
+    border-radius: 6px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#workspaces button:hover {
+    color: #c0caf5;
+    background-color: rgba(187,154,247,0.25);
+
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#workspaces button.active {
+    color: #24283b;
+    background-color: #bb9af7;
+
+    box-shadow: none;
+}
+
+
+#workspaces button.active:hover {
+    color: #24283b;
+    background-color: rgba(203,166,247,0.95);
+
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    color: #f7768e;
+    background-color: rgba(247,118,142,0.2);
+}
+
+
+#workspaces button.urgent:hover {
+    color: #f7768e;
+    background-color: rgba(247,118,142,0.35);
+
+    box-shadow: none;
+}
+
+#workspaces button,
+#workspaces button:hover,
+#workspaces button:active,
+#workspaces button:checked {
+    background-image: none;
+    outline: none;
+}
+
+#clock {
+    background-color: rgba(187,154,247,0.18);
+    color: #bb9af7;
+
+    font-weight: bold;
+}
+
+#cpu {
+    background-color: rgba(122,162,247,0.15);
+    color: #7aa2f7;
+}
+
+#memory {
+    background-color: rgba(158,206,106,0.15);
+    color: #9ece6a;
+}
+
+#disk {
+    background-color: rgba(224,175,104,0.15);
+    color: #e0af68;
+}
+
+#wireplumber {
+    background-color: rgba(187,154,247,0.15);
+    color: #bb9af7;
+}
+
+#wireplumber.muted {
+    color: #f7768e;
+}
+
+#network {
+    background-color: rgba(122,162,247,0.15);
+    color: #7aa2f7;
+}
+
+#network.disconnected {
+    color: #f7768e;
+}
+
+#bluetooth {
+    background-color: rgba(125,207,255,0.15);
+    color: #7dcfff;
+}
+
+#bluetooth.disabled {
+    color: #565f89;
+}
+
+#battery {
+    background-color: rgba(158,206,106,0.15);
+    color: #9ece6a;
+}
+
+#battery.charging {
+    color: #73daca;
+}
+
+#battery.warning:not(.charging) {
+    color: #e0af68;
+}
+
+#battery.critical:not(.charging) {
+    color: #f7768e;
+}
+
+#tray {
+    background-color: rgba(36,40,59,0.85);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#custom-launcher {
+    background-color: rgba(187,154,247,0.18);
+    color: #bb9af7;
+
+    font-size:16px;
+    padding:0 15px;
+}
+
+#clock:hover {
+    background-color: rgba(187,154,247,0.28);
+}
+
+#cpu:hover {
+    background-color: rgba(122,162,247,0.28);
+}
+
+#memory:hover {
+    background-color: rgba(158,206,106,0.28);
+}
+
+#disk:hover {
+    background-color: rgba(224,175,104,0.28);
+}
+
+#wireplumber:hover {
+    background-color: rgba(187,154,247,0.28);
+}
+
+#network:hover {
+    background-color: rgba(122,162,247,0.28);
+}
+
+#bluetooth:hover {
+    background-color: rgba(125,207,255,0.28);
+}
+
+#battery:hover {
+    background-color: rgba(158,206,106,0.28);
+}
+
+#tray:hover {
+    background-color: rgba(187,154,247,0.20);
+}
+
+#disk:hover {
+    background-color: rgba(224,175,104,0.28);
+}
+
+#custom-launcher:hover {
+    background-color: rgba(187,154,247,0.30);
+}
+
+tooltip {
+
+    background-color: rgba(36,40,59,0.95);
+    color:#c5c8c6;
+    border-radius:8px;
+}

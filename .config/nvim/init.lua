@@ -106,6 +106,13 @@ if not status_ok then
   return
 end
 
+local packer = require("packer")
+packer.init({
+  git = {
+    default_url_format = "git@github.com:%s.git",
+  },
+})
+
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   
@@ -113,28 +120,32 @@ packer.startup(function(use)
   
   use 'tpope/vim-commentary'
   use 'tpope/vim-repeat'
+  use 'folke/tokyonight.nvim'
   
   if packer_bootstrap then
     packer.sync()
   end
 end)
 
-vim.opt.termguicolors = false
-vim.opt.background = 'light'
-vim.cmd('colorscheme vim')
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
+vim.cmd('colorscheme tokyonight-storm')
 
-vim.cmd('hi Normal ctermbg=NONE')
-vim.cmd('hi NonText ctermbg=NONE')
-vim.cmd('hi LineNr ctermbg=NONE')
+require("tokyonight").setup({
+  style = "night",
+})
 
 vim.cmd([[
-  hi MatchParen ctermfg=red ctermbg=NONE guifg=red guibg=NONE
-  hi Search ctermfg=black guifg=black
-  hi Error ctermfg=black guifg=black
-  hi DiagnosticError ctermfg=black guifg=black
-  hi ErrorMsg ctermfg=black guifg=black
   set showmatch
   set matchtime=2
 ]])
 
-
+vim.cmd([[
+  highlight Normal guibg=NONE
+  highlight NormalNC guibg=NONE
+  highlight SignColumn guibg=NONE
+  highlight LineNr guibg=NONE
+  highlight CursorLineNr guibg=NONE
+  highlight EndOfBuffer guibg=NONE
+  highlight VertSplit guibg=NONE
+]])

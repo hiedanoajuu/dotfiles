@@ -6,6 +6,11 @@ SAVEHIST=1500
 setopt autocd extendedglob notify
 bindkey -v
 
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^H' backward-delete-char
+bindkey -M vicmd '^?' vi-backward-char
+bindkey -M vicmd '^H' vi-backward-char
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/hiedanoajuu/.zshrc'

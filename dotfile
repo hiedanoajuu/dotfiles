@@ -12,6 +12,10 @@ FILES=(
     "$HOME/.config/hypr/hyprlock.conf"
     "$HOME/.config/hypr/hyprpaper.conf"
     "$HOME/.config/tmux/tmux.conf"
+    "$HOME/.config/waybar/config"
+    "$HOME/.config/waybar/style.css"
+    "$HOME/.config/wofi/style.css"
+    "$HOME/.config/zathura/zathurarc"
 )
 
 backup() {
